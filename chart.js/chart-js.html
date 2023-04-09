@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Atidade de P.I</title>
+</head>
+
+<body style="display: flex;">
+
+    <div>
+        <canvas id="myChart" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart2" style="position: relative; height:40vh; width:40vw"></canvas>
+    </div>
+
+    <div>
+        <canvas id="myChart3" style="position: relative; height:40vh; width:18vw"></canvas>
+    </div>
+
+
+
+</body>
+
+<script>
+    const labels = [
+        'Janeiro',
+        'Fevereiro',
+        'Março',
+        'Abril',
+        'Maio',
+        'Junho',
+
+    ];
+
+    const data = {
+        labels: labels,
+        datasets: [{
+            label: 'Meu primeiro gráfico de linhas',
+            backgroundColor: 'rgb(255, 0, 0)',
+            borderColor: 'rgb(255, 0, 0)',
+            data: [5, 10, 8, 12, 20, 24, 32],
+        }]
+    };
+
+    const config = {
+        type: 'line',
+        data: data,
+        Options: {}
+    };
+
+    const config2 = {
+        type: 'bar',
+        data: data,
+        Option: {}
+    }
+
+
+
+    const labels3 = [
+        'BA',
+        'RJ',
+        'SP',
+
+    ];
+
+    const data3 = {
+        datasets: [{
+            data: [40, 30, 30]
+        }],
+
+        // These labels appear in the legend and in the tooltips when hovering different arcs
+        labels: [
+            'SP',
+            'BA',
+            'MG'
+        ]
+    };
+    
+
+    const config3 = {
+        type: 'doughnut',
+        data: data3,
+        Options: {}
+    };
+
+
+</script>
+
+
+
+<script>
+    const myChart = new Chart(
+        document.getElementById('myChart'),
+        config
+    );
+
+    const myChart2 = new Chart(
+        document.getElementById('myChart2'),
+        config2
+    );
+
+    const myChart3 = new Chart(
+        document.getElementById('myChart3'),
+        config3
+    );
+</script>
+
+</html>
